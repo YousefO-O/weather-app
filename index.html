@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="location-input">Location</label>
+            <input type="search" id="location-input">
+        </div>
+        <button>Search</button>
+    </form>
+    <div>
+        <div>
+            <input type="radio" name="temp-unit" id="farenheit" value="farenheit" checked>
+            <label for="farenheit">°F</label>
+        </div>
+        <div>
+            <input type="radio" name="temp-unit" value="celsius" id="celsius">
+            <label for="celsius">°C</label>
+        </div>
+    </div>
+    
+    <div id="weather-forecast">
+        <img src="" id="weather-icon">
+        <p id="location-display"></p>
+        <p id="temp-display"></p>
+    </div>
+    <script src="DOMController.js" type="module"></script>
+</body>
+</html>

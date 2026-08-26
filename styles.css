@@ -1,0 +1,9 @@
+#weather-forecast {
+    display: none;
+}
+
+#weather-icon {
+    width: 5em;
+    height: 5em;
+    vertical-align: -0.125em;
+}
