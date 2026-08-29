@@ -15,20 +15,22 @@
         <button>Search</button>
     </form>
     <div>
-        <div>
-            <input type="radio" name="temp-unit" id="farenheit" value="farenheit" checked>
-            <label for="farenheit">°F</label>
-        </div>
-        <div>
-            <input type="radio" name="temp-unit" value="celsius" id="celsius">
-            <label for="celsius">°C</label>
-        </div>
+        <input type="radio" name="temp-unit" id="farenheit" value="farenheit" checked>
+        <label for="farenheit">°F</label>
+        <input type="radio" name="temp-unit" value="celsius" id="celsius">
+        <label for="celsius">°C</label>
+        <input type="radio" name="temp-unit" value="kelvin" id="kelvin">
+        <label for="kelvin">K</label>
     </div>
     
     <div id="weather-forecast">
-        <img src="" id="weather-icon">
+        <figure>
+            <img id="weather-icon" src="" alt="">
+            <figcaption id="weather-icon-caption"></figcaption>
+        </figure>
         <p id="location-display"></p>
         <p id="temp-display"></p>
+        <p id="temp-range-display"></p>
     </div>
     <script src="DOMController.js" type="module"></script>
 </body>
