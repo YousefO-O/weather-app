@@ -7,3 +7,10 @@
     height: 5em;
     vertical-align: -0.125em;
 }
+
+#loading-component {
+    display: none;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+}
