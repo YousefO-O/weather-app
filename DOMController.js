@@ -21,10 +21,11 @@ getWeatherForm.addEventListener('submit', async (event)=>{
     const processedData = processWeatherData(data)
     console.log(processedData)
     weatherData = processedData
-    displayWeatherData(processedData)
+    updateDisplayData()
+    displayWeatherData(displayData)
 })
 
-const isTesting = true
+const isTesting = false
 
 const testObject = {
     address: "Saudi Arabia",
@@ -45,8 +46,8 @@ function updateDisplayData() {
     }
     if(!tempUnits.farenheit[conversionMethod]) return
     displayData.temp = tempUnits.farenheit[conversionMethod](weatherData.temp)
-    displayData.minTemp = tempUnits.farenheit[conversionMethod](weatherData.temp)
-    displayData.maxTemp = tempUnits.farenheit[conversionMethod](weatherData.temp)
+    displayData.minTemp = tempUnits.farenheit[conversionMethod](weatherData.minTemp)
+    displayData.maxTemp = tempUnits.farenheit[conversionMethod](weatherData.maxTemp)
 }
 
 const tempUnitInputs = document.querySelectorAll('input[name="temp-unit"]')
