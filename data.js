@@ -18,7 +18,7 @@ export function processWeatherData(data) {
     const address = data.address
     const maxTemp = data.days[0].tempmax
     const minTemp = data.days[0].tempmin
-    const temperature = data.days[0].temp
+    const temp = data.days[0].temp
     const conditions = data.days[0].conditions
     const humidity = data.days[0].humidity
     const precipitation = data.days[0].precipitation

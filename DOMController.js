@@ -1,16 +1,18 @@
 import { fetchWeatherData, processWeatherData } from "./data.js"
 import { tempUnits } from "./temp-units.js"
+import { validateLocationInput } from "./components/location-input.js"
 const getWeatherForm = document.querySelector('form')
 getWeatherForm.addEventListener('submit', async (event)=>{
     event.preventDefault()
+    const validity = validateLocationInput()
+    if(!validity) return
     if(isTesting) {
         weatherData = testObject
         updateDisplayData()
         displayWeatherData(displayData)
         return
     }
-    const location = document.querySelector('#location-input').value
-    const data = await fetchWeatherData(location)
+    const data = await fetchWeatherData(location.value)
     const processedData = processWeatherData(data)
     console.log(processedData)
     weatherData = processedData
