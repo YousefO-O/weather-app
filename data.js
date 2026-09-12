@@ -15,6 +15,8 @@ export async function fetchWeatherData(location) {
 }
 
 export function processWeatherData(data) {
+    console.log(data)
+    const hours = data.days[0].hours
     const address = data.address
     const maxTemp = data.days[0].tempmax
     const minTemp = data.days[0].tempmin
@@ -30,6 +32,7 @@ export function processWeatherData(data) {
         temp,
         conditions,
         icon,
+        hours,
     }
 }
 // For Testing:
