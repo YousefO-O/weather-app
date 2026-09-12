@@ -1,7 +1,7 @@
 import { fetchWeatherData, processWeatherData } from "./data.js"
 import { tempUnits } from "./temp-units.js"
 import { validateLocationInput } from "./components/location-input.js"
-import {startLoadingComponent, stopLoadingComponent} from './components/loading.js'
+import {startLoadingComponent, stopLoadingComponent, showFetchingFailed} from './components/loading.js'
 import { populateHoursSlider } from "./components/hours-slider.js"
 const getWeatherForm = document.querySelector('form')
 getWeatherForm.addEventListener('submit', async (event)=>{
@@ -17,6 +17,7 @@ getWeatherForm.addEventListener('submit', async (event)=>{
     }
     startLoadingComponent()
     const data = await fetchWeatherData(location.value)
+    if(!data) return
     stopLoadingComponent()
     const processedData = processWeatherData(data)
     console.log(processedData)

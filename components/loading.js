@@ -1,7 +1,9 @@
 const loadingComponent = document.querySelector('#loading-component')
 const loadingSpan = document.querySelector('#loading-span')
+const loadingStatus = document.querySelector('#fetching-status')
 let loadingInterval;
 export function startLoadingComponent() {
+    loadingStatus.textContent = 'Fetching data'
     loadingComponent.style.display = 'flex'
     const string = '...'
     let index = 0
@@ -17,6 +19,12 @@ export function startLoadingComponent() {
 }
 export function stopLoadingComponent() {
     loadingComponent.style.display = 'none'
-    loadingSpan.textContent = ''
+    loadingStatus.textContent = ''
     clearInterval(loadingInterval)
+    loadingSpan.textContent = ''
+}
+
+export function showFetchingFailed() {
+    loadingStatus.textContent = 'Failed to fetch data'
+    loadingComponent.style.display = 'flex'
 }
