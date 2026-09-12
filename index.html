@@ -14,23 +14,36 @@
         </div>
         <button>Search</button>
     </form>
-    <div>
-        <input type="radio" name="temp-unit" id="farenheit" value="farenheit" checked>
-        <label for="farenheit">°F</label>
-        <input type="radio" name="temp-unit" value="celsius" id="celsius">
-        <label for="celsius">°C</label>
-        <input type="radio" name="temp-unit" value="kelvin" id="kelvin">
-        <label for="kelvin">K</label>
-    </div>
+    
     
     <div id="weather-forecast">
-        <figure>
-            <img id="weather-icon" src="" alt="">
-            <figcaption id="weather-icon-caption"></figcaption>
-        </figure>
-        <p id="location-display"></p>
-        <p id="temp-display"></p>
-        <p id="temp-range-display"></p>
+        <div class="top left">
+            <img id="weather-icon" class="left" src="" alt="">
+            <div class="right">
+                <p id="location-display" class="top right"></p>
+                <div class="bottom">
+                    <p id="temp-display"></p>
+                    <div id="temp-units">
+                        <div>
+                            <input type="radio" name="temp-unit" id="farenheit" value="farenheit" checked>
+                            <label for="farenheit">°F</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="temp-unit" value="celsius" id="celsius">
+                            <label for="celsius">°C</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="temp-unit" value="kelvin" id="kelvin">
+                            <label for="kelvin">K</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top right">
+            <p id="conditions" class="top right"></p>       
+            <p id="temp-range-display" class="top right"></p>
+        </div>
         <div id="hours-slider">
         </div>
     </div>

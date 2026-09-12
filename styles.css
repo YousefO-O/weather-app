@@ -1,19 +1,79 @@
 #weather-forecast {
     display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 4px solid lightgray;
+    background-color: rgb(0,0,0,.1);
+    border-radius: 2rem;
+}
+
+#weather-forecast .top.left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#location-display {
+    font-size: 2rem;
+    margin:0;
+    margin-top: auto;
+}
+
+#weather-forecast > .top.left > .right > .bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+#temp-display {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    grid-column: 1/2;
+}
+
+#temp-units {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+}
+
+.top {
+    grid-row: 1/2;
+}
+
+.bottom {
+    grid-row: 2/3
+}
+
+.left {
+    grid-column: 1/2;
+}
+
+.right {
+    grid-column: 2/3;
 }
 
 #weather-icon {
-    width: 5em;
-    height: 5em;
+    width: 10em;
+    height: 10em;
     vertical-align: -0.125em;
+    grid-row: 1/3;
+    align-self: center;
+    justify-self: center;
+}
+
+#temp-display {
+    grid-row: 1/2;
 }
 
 #hours-slider {
     padding: 1rem;
-    max-width: 300px;
     display: flex;
     gap: 1rem;
     overflow-x: auto;
+    grid-row: 2/3;
+    grid-column: 1/3;
 }
 
 .hour-forecast {

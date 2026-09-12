@@ -25,7 +25,7 @@ getWeatherForm.addEventListener('submit', async (event)=>{
     displayWeatherData(displayData)
 })
 
-const isTesting = true
+const isTesting = false
 
 const testObject = {
     address: "Saudi Arabia",
@@ -206,12 +206,12 @@ let displayData = {}
 
 function displayWeatherData(data) {
     document.querySelector('#weather-icon').src = `./icons/${data.icon}.svg`
-    document.querySelector('#weather-icon-caption').textContent = data.conditions
+    document.querySelector('#conditions').textContent = data.conditions
     const tempRange =
     `${data.minTemp} ${tempUnit.symbol} / ${data.maxTemp} ${tempUnit.symbol}`
     document.querySelector('#temp-range-display').textContent = tempRange
     document.querySelector('#location-display').textContent = data.address
     document.querySelector('#temp-display').textContent = `${data.temp} ${tempUnit.symbol}`
     populateHoursSlider(data.hours)
-    document.querySelector('#weather-forecast').style.display = 'block'
+    document.querySelector('#weather-forecast').style.display = 'grid'
 }
