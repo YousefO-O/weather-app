@@ -50,6 +50,12 @@
     <div id="loading-component">
         <p id="fetching-status">Fetching data</p>
     </div>
+    <p>Note that decimal temps are estimated by:
+        <ul>
+            <li>Incrementing the temp to a whole number if the decimal part is greater than or equal to .5 (so 5.5 becomes 6)</li>
+            <li>Decrementing the temp to a whole number if the decimal part is less than .5 (so 5.4 becomes 5)</li>
+        </ul>
+    </p>
     <script src="DOMController.js" type="module"></script>
 </body>
 </html>

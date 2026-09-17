@@ -1,5 +1,5 @@
 import { fetchWeatherData, processWeatherData } from "./data.js"
-import { tempUnits } from "./temp-units.js"
+import { tempUnits, estimateNumber } from "./temp-units.js"
 import { validateLocationInput } from "./components/location-input.js"
 import {startLoadingComponent, stopLoadingComponent, showFetchingFailed} from './components/loading.js'
 import { populateHoursSlider } from "./components/hours-slider.js"
@@ -37,8 +37,12 @@ function updateDisplayData() {
         displayData[value] = weatherData[value]
     }
     if(tempUnit.name==='farenheit') {
+        displayData.temp = estimateNumber(weatherData.temp)
+        displayData.minTemp = estimateNumber(weatherData.minTemp)
+        displayData.maxTemp = estimateNumber(weatherData.maxTemp)
         displayData.hours.forEach(hour=>{
-            hour.formattedTemp = `${hour.temp} ${tempUnit.symbol}`
+            const estimatedTemp = estimateNumber(hour.temp)
+            hour.formattedTemp = `${estimatedTemp} ${tempUnit.symbol}`
         })
         return
     }
