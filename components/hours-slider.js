@@ -22,7 +22,7 @@ export function populateHoursSlider(hoursArray) {
         const container = document.createElement('div')
         container.classList.add('hour-forecast')
         const icon = document.createElement('img')
-        icon.src = `../icons/${hour.icon}.svg`
+        icon.src = `..icons/${hour.icon}.svg`
         icon.classList.add('hour-weather-icon')
         const timeSpan = document.createElement('p')
         timeSpan.textContent = formatHour((hoursArray.indexOf(hour)+1))
