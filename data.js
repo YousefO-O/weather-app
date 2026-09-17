@@ -1,5 +1,5 @@
 const weatherApiKey = "78VXK83JGHH3HA9V4EBR7AQ2V"
-import { showFetchingFailed } from "./components/loading.js";
+import { showFetchingFailed, stopLoadingComponent } from "./components/loading.js";
 export async function fetchWeatherData(location) {
     try {
         const date = new Date();
@@ -10,6 +10,7 @@ export async function fetchWeatherData(location) {
         return weatherData
     }
     catch (error) {
+        stopLoadingComponent()
         showFetchingFailed()
         // throw new Error(error)
     }
